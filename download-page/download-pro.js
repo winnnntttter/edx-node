@@ -13,10 +13,11 @@ const fetchPage = (urlF,callback) =>{
       callback(null,buf);
     })
     response.on('error',(error)=>{
-      console.error(`Got error:${error.message}`);
+      console.error(`Got error1:${error.message}`);
     })
   }).on('error',(error)=>{
-    console.error(`Got error:${error.message}`);
+    console.error(`Got error2:${error.message}`);
+    callback(error);
   })
 }
 
