@@ -3,24 +3,26 @@ const fs = require('fs');
 const path = require('path');
 const uuidV1 = require('uuid/v1');
 
-const downloadPage = (url = 'http://nodeprogram.com') =>{
-  console.log('downloading',url);
-  const fetchPage = (urlF,callback) =>{
-    http.get(urlF,(response)=>{
-      let buf = '';
-      response.on('data',(chunk)=>{
-        buf +=chunk;
-      })
-      response.on('end',()=>{
-        callback(null,buf);
-      })
-      response.on('error',(error)=>{
-        console.error(`Got error:${error.message}`);
-      })
-    }).on('error',(error)=>{
+const fetchPage = (urlF,callback) =>{
+  http.get(urlF,(response)=>{
+    let buf = '';
+    response.on('data',(chunk)=>{
+      buf +=chunk;
+    })
+    response.on('end',()=>{
+      callback(null,buf);
+    })
+    response.on('error',(error)=>{
       console.error(`Got error:${error.message}`);
     })
-  }
+  }).on('error',(error)=>{
+    console.error(`Got error:${error.message}`);
+  })
+}
+
+const downloadPage = (url = 'http://nodeprogram.com') =>{
+  console.log('downloading',url);
+  
   const folderName = uuidV1();
   fs.mkdirSync(folderName);
   fetchPage(url,(error,data)=>{
