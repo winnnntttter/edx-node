@@ -1,0 +1,23 @@
+{
+  "name": "edx-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winnnntttter/edx-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winnnntttter/edx-node/issues"
+  },
+  "homepage": "https://github.com/winnnntttter/edx-node#readme",
+  "dependencies": {
+    "csvtojson": "^1.1.9"
+  }
+}
