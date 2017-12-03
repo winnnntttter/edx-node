@@ -12,6 +12,7 @@ http.createServer((req,res)=>{
     })
     req.on('end',function(){
       console.log(`Body:${buff}`)
+      //response.statusCode = 200 res.end()
       res.end('\nAccepted body\n')
     })
   }else{
