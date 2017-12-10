@@ -7,6 +7,12 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch Program1",
+      "program": "${workspaceFolder}/express/RESTFUL-blog/server.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/lesson1\\account-service.js"
     }
