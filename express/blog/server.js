@@ -1,7 +1,7 @@
 const express = require('../../node_modules/express')
 const bodyParser = require('body-parser')
 const logger = require('morgan')
-//const errorhandler = require('errorhandler')
+const errorhandler = require('errorhandler')
 const {posts, comments} =require('./routes')
 
 const app = express()
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'testing') {
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
-//app.use(errorhandler());
+app.use(errorhandler());
 
 app.use((req,res,next)=>{
     req.store = store;
