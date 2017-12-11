@@ -40,7 +40,7 @@ app.put('/posts/:postId/comments/:comId',comments.updateComment);
 app.delete('posts/:postId/comments/:comId',comments.delComment);
 
 
-app.get('*',(req,res)=>{
+app.all('*',(req,res)=>{
     res.status(404).send('Not Found!');
 })
 

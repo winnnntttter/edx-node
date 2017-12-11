@@ -25,6 +25,7 @@ module.exports = {
         const id = req.params.postId;
         if(!req.store.posts[id]) throw new Error('Not Found');
         req.store.posts[id] = req.body;
+        //req.store.posts[id] = Object.assign(req.store.posts[id], req.body)
         fs.writeFileSync('./data.json',JSON.stringify(req.store,null,4));
         res.status(204).send(req.store.posts[id])
     },
