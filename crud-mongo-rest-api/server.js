@@ -21,6 +21,15 @@ mongodb.MongoClient.connect(url,(error,db)=>{
     })
   })
 
+  app.get('/accounts/:id',(req,res)=>{
+    db.collection('accounts')
+    .find({_id:mongodb.ObjectID(req.params.id)},{sort:{_id:-1}})
+    .toArray((error,accounts)=>{
+      if(error) return next(error);
+      res.send(accounts);
+    })
+  })
+
   app.post('/accounts',(req,res)=>{
     let newAccount = req.body;
     db.collection('accounts').insert(newAccount,(error,results)=>{
@@ -47,6 +56,12 @@ mongodb.MongoClient.connect(url,(error,db)=>{
       res.send(results)
     })
   })
-
+  app.use(errorhandler());
   app.listen(3000)
 })
+/* 
+curl -H "Content-Type: application/json" -X POST -d '{"balance": 100, "name":"checking"}'  "http://localhost:3000/accounts" 
+curl -H 'Content-Type: application/json' -X PUT -d '{"balance": 200, "name": "savings"}'  "http://localhost:3000/accounts/{ID}" 
+curl "http://localhost:3000/accounts" 
+curl -X DELETE "http://localhost:3000/accounts/{ID}"
+*/
