@@ -10,4 +10,13 @@ const bookSchema = mongoose.Schema({
   updateAt:{type:Date,default:Date.now()},
   email:String,
   reviews:[mongoose.Schema.Types.Mixed]
-})
+});
+
+let Book = mongoose.model("Book",bookSchema);
+let myBook = new Book({
+  name: "Call Of Cthulhu",
+  author: "H.P.L",
+  link: "http://aaaa.bbbb",
+  email: "qwe@qq.com",
+  createdAt: Date.now()
+});
