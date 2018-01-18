@@ -25,10 +25,10 @@ let ca = [{text: 'Cruel..var { house, mouse} = No type optimization at all'},
 });
 console.log(ca);
 
-var post = new Post({
+/* var post = new Post({
   name: 'Top 10 ES6 Features every Web Developer must know',
   url: 'https://webapplog.com/es6',
-  text: 'This essay will give you a quick introduction to ES6. If you don鈥檛 know what is ES6, it鈥檚 a new JavaScript implementation.',
+  text: 'This essay will give you a quick introduction to ES6. If you  know what is ES6, it a new JavaScript implementation.',
   comments: ca
 });
 
@@ -47,5 +47,5 @@ post.save(function (err) {
     console.log('The post is %s', post);
     mongoose.disconnect();
   });
-});
+}); */
 

@@ -19,7 +19,7 @@ const Comment = mongoose.model('Comment', {
 let post = new Post({
   name: 'Top 10 ES6 Features every Web Developer must know',
   url: 'https://webapplog.com/es6',
-  text: 'This essay will give you a quick introduction to ES6. If you don鈥檛 know what is ES6, it鈥檚 a new JavaScript implementation.'
+  text: 'This essay will give you a quick introduction to ES6. If you don know what is ES6, it a new JavaScript implementation.'
 });
 
 post.save(function (err) {
